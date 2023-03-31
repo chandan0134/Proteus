@@ -1,35 +1,91 @@
-import React from 'react'
-import img from '../assets/signup-bg.jpg'
+import React, { useState } from "react";
+import login from "../assets/signup-bg.jpg";
+import logo from "../assets/logo.png";
+import { AiFillEyeInvisible, AiFillEye } from "react-icons/ai";
 
-const login = () => {
+const Login = () => {
+  const [showPassword, setShowPassword] = useState(false);
+
   return (
-    
+    <div className=" w-full h-screen bg-[#242038] ">
+      <div className=" px-5 py-3">
+      <img className=" w-[10%]   object-contain" src={logo} alt=""/>
+      </div>
+      <div className=" w-full h-[92vh] grid grid-cols-1 sm:grid-cols-2 bg-[#242038] ">
+        <div className=" flex flex-col justify-center items-center ">
+          <form className=" max-w-[400px] w-full mx-auto  p-4 rounded-xl ">
+            <h1 className=" text-4xl text-center font-bold py-6 text-white">
+              Welcome
+            </h1>
+            <div className="  flex flex-col py-1 px-3  bg-[#433C62] rounded-[25px] ">
+              <input
+                className="  bg-transparent p-2 text-[#D2D2D2] border-transparent focus:outline-none placeholder:text-[#D2D2D2] placeholder:font-robotomono text-xs"
+                type="text"
+                placeholder="Public Key"
+              />
+            </div>
+            <div className="  flex flex-col py-1 px-3 bg-[#433C62] rounded-[25px] my-6 ">
+              <div className=" relative ">
+                <input
+                  className="  bg-transparent p-2 text-[#D2D2D2] focus:outline-none placeholder:text-[#D2D2D2] placeholder:font-robotomono text-xs"
+                  type={showPassword ? "text" : "password"}
+                  placeholder="Password"
+                />
+                <button
+                  type="button"
+                  onClick={() => setShowPassword(!showPassword)}
+                  className=" absolute inset-y-0 right-0 p-2 flex items-center text-white"
+                >
+                  {showPassword ? (
+                    <AiFillEye size={20} />
+                  ) : (
+                    <AiFillEyeInvisible size={20} />
+                  )}
+                </button>
+              </div>
+            </div>
+            <div className="  flex flex-col py-1 px-3 bg-[#433C62] rounded-[25px]">
+              <div className=" relative ">
+                <input
+                  className="  bg-transparent p-2 text-[#D2D2D2] focus:outline-none  placeholder:text-[#D2D2D2]  placeholder:font-robotomono text-xs"
+                  type={showPassword ? "text" : "password"}
+                  placeholder="Private Key"
+                />
+                <button
+                  type="button"
+                  onClick={() => setShowPassword(!showPassword)}
+                  className=" absolute inset-y-0 right-0 p-2 flex items-center text-white"
+                >
+                  {showPassword ? (
+                    <AiFillEye size={20} />
+                  ) : (
+                    <AiFillEyeInvisible size={20} />
+                  )}
+                </button>
+              </div>
+            </div>
+            <div className=" font-robotomono my-3 text-center text-white text-sm">
+              <p>
+                Don’t have an account?{" "}
+                <a href="/signup" className=" text-indigo-500">
+                  Sign up
+                </a>{" "}
+              </p>
+            </div>
+            <div className="flex justify-center items-center ">
+              <button class="  w-[50%] bg-[#7189FF] rounded-[35px] my-5 py-2 font-bold text-xl text-white ">
+                Sign in
+              </button>
+            </div>
+          </form>
+        </div>
 
-    <div className=' w-full h-screen grid grid-cols-2 bg-[#242038] '>
-    
-      <div className=' flex flex-col justify-center items-center text-white'>
-        <div className=' flex flex-col justify-center items-center '>
-            <h1>welcome</h1>
-            <form className=' w-full  '>
-                <div className='  w-full p-2 bg-[#433C62] rounded-xl my-3'>
-                <input className='  bg-transparent text-black placeholder:text-[#D2D2D2]' type='text' placeholder='username'/>
-                </div>
-                <div className='  w-full p-2 bg-[#433C62] rounded-xl my-3'>
-                <input className='  bg-transparent text-black placeholder:text-[#D2D2D2]' type='password' placeholder='password'/>
-                </div>
-                <div><p>Don’t have an account? <a href='/signup'>Sign up</a> </p></div>
-                <div className='  w-[60%]  py-2 bg-[#7189FF] rounded-xl text-center my-3 mx-auto '>
-                <button class="rounded-full mx-auto text-center">log in</button>
-                </div>
-            </form>
+        <div className=" hidden sm:block rounded-lg">
+          <img className="w-full h-full object-contain" src={login} />
         </div>
       </div>
-      
-      <div className=' flex flex-col justify-center items-center text-white'>
-        <img className=' object-contain' src={img}/>
-      </div>
     </div>
-  )
-}
+  );
+};
 
-export default login
+export default Login;

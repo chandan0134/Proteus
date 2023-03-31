@@ -23,7 +23,7 @@ const keys = () => {
             </div>
             <div className=' rounded-xl  py-2 bg-[#7189FF]    px-12  text-center my-3 mx-auto'>
                 <button>Transaction key</button>
-                div>
+                
                 <AiFillEyeInvisible />
                 <AiFillEye />
         </div>

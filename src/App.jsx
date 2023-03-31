@@ -2,7 +2,7 @@ import "./App.css";
 import Login from "./pages/login";
 import Signup from "./pages/signup";
 import KeyPage from "./pages/keys";
-import KeyPage2 from "../page/keys2";
+// import KeyPage2 from "../page/keys2";
 import { BrowserRouter, Route, Routes, Router } from "react-router-dom";
 
 function App() {
@@ -14,7 +14,7 @@ function App() {
       <Route exact path='/signup' Component={Signup} />
       <Route exact path='/keys' Component={KeyPage} />
 
-       <Route exact path='/keys2' Component={KeyPage2} />
+       {/* <Route exact path='/keys2' Component={KeyPage2} /> */}
       </Routes>
     </BrowserRouter>
       {/* <> */}
