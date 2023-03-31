@@ -7,6 +7,7 @@ const Keys = () => {
 
   return (
     <div className="flex flex-col w-full h-screen text-white bg-[#242038]">
+      
       <div className="flex flex-col justify-around h-[80%] items-center">
         <div className="h-[20%]">
           <img className="w-[100%] h-[100%]" src={logo} alt="" />
