@@ -22,7 +22,9 @@ const Signup = () => {
     }
   
     // try {
-      axios.get("http://0217-2402-3a80-1c73-aff6-cd86-4e6d-a408-6371.ngrok.io/")
+      axios.get("http://192.168.226.85:8000/paillier/generatekeys", {
+        'Access-Control-Allow-Headers':"*"
+      })
       .then((res)=>{console.log(res)})
     // } catch (error) {
     //   console.error(error);
