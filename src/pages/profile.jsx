@@ -6,7 +6,7 @@ const Profile = () => {
   return (
     <div className=" w-full h-screen bg-[#242038] ">
     <div class="flex h-screen bg-[514976]">
-      <div class="fixed flex flex-col top-0 left-0 h-full w-[10vw] bg-gray-900  ">
+      <div class="fixed flex flex-col top-0 left-0 h-full w-[5vw] bg-gray-900  ">
         <div class="flex items-center justify-center mt-5">
           <a
             href="/signup"
@@ -34,23 +34,32 @@ const Profile = () => {
       </div> */}
       <div className="flex flex-col w-full h-screen text-white bg-[#242038]">
        <div className="flex flex-col justify-around h-[30%] w-[90vw] items-center">
-        <p >Hello </p>
+        <center><p >Hello </p></center>
        </div>
 
        <div className="flex flex-col justify-around h-[70%] items-center">
-        <p>bcabvbvkbvvb</p>
-       <div class="flex flex-row justify-between">
-        
-        <div class="flexbox">schavc</div>
-        <div class="flexbox"></div>
+       
+        <div class="rid grid-cols-2 gap-4">
+
+        <div class="col-span-3">Column 1</div>
+        <div class="col-span-2">Column 2</div>
+        <div class="col-span-1">Column 3</div>
+        <div class="col-span-1">Column 4</div>
+        <div class="col-span-1">Column 5</div>
+
         </div>
 
+        <div>
+          
+        </div>
+      </div>
+
 
 
       </div>
       </div>
     </div>
-    </div>
+   
   );
 };
 
