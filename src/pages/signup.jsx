@@ -13,39 +13,33 @@ const Signup = () => {
       </div>
       <div className=" w-full h-[92vh] grid grid-cols-1 sm:grid-cols-2 bg-[#242038] ">
         <div className=" flex flex-col justify-center items-center ">
-          <form className=" max-w-[400px] w-full mx-auto  px-4  rounded-xl ">
+          <form className=" max-w-[400px] w-full mx-auto  p-4  rounded-xl ">
             <h1 className=" text-4xl text-center font-bold pt-6 pb-4 text-white">
               Welcome
             </h1>
-            <div className="  flex flex-col  px-3  bg-[#433C62] rounded-[12px] ">
-              <input
-                className="  bg-transparent p-2 text-[#D2D2D2] border-transparent focus:outline-none placeholder:text-[#D2D2D2] placeholder:font-robotomono text-xs"
-                type="email"
-                placeholder="Email ID"
-              />
-            </div>
-            <div className="  flex flex-col  px-3  bg-[#433C62] rounded-[12px] my-3 ">
+            
+            <div className="  flex flex-col py-1 px-3  bg-[#433C62] rounded-[12px] my-3 ">
               <input
                 className="  bg-transparent p-2 text-[#D2D2D2] border-transparent focus:outline-none placeholder:text-[#D2D2D2] placeholder:font-robotomono text-xs"
                 type="text"
                 placeholder="Name"
               />
             </div>
-            <div className="  flex flex-col  px-3  bg-[#433C62] rounded-[12px] ">
+            <div className="  flex flex-col py-1 px-3  bg-[#433C62] rounded-[12px] ">
               <input
                 className="  bg-transparent p-2 text-[#D2D2D2] border-transparent focus:outline-none placeholder:text-[#D2D2D2] placeholder:font-robotomono text-xs"
                 type="tel"
                 placeholder="Contact No"
               />
             </div>
-            <div className="  flex flex-col  px-3  bg-[#433C62] rounded-[12px] my-3 ">
+            <div className="  flex flex-col py-1 px-3  bg-[#433C62] rounded-[12px] my-3 ">
               <input
                 className="  bg-transparent p-2 text-[#D2D2D2] border-transparent focus:outline-none placeholder:text-[#D2D2D2] placeholder:font-robotomono text-xs"
                 type="text"
                 placeholder="Gender"
               />
             </div>
-            <div className="  flex flex-col  px-3  bg-[#433C62] rounded-[12px] ">
+            <div className="  flex flex-col py-1 px-3  bg-[#433C62] rounded-[12px] ">
               <input
                 className="  bg-transparent p-2 text-[#D2D2D2] border-transparent focus:outline-none placeholder:text-[#D2D2D2] placeholder:font-robotomono text-xs"
                 type="number"
@@ -53,7 +47,7 @@ const Signup = () => {
               />
             </div>
            
-            <div className="  flex flex-col  px-3 bg-[#433C62] rounded-[12px] my-3 ">
+            <div className="  flex flex-col py-1 px-3 bg-[#433C62] rounded-[12px] my-3 ">
               <div className=" relative ">
                 <input
                   className="  bg-transparent p-2 text-[#D2D2D2] focus:outline-none placeholder:text-[#D2D2D2] placeholder:font-robotomono text-xs"
@@ -73,7 +67,7 @@ const Signup = () => {
                 </button>
               </div>
             </div>
-            <div className="  flex flex-col  px-3 bg-[#433C62] rounded-[12px]">
+            <div className="  flex flex-col py-1 px-3 bg-[#433C62] rounded-[12px]">
               <div className=" relative ">
                 <input
                   className="  bg-transparent p-2 text-[#D2D2D2] focus:outline-none  placeholder:text-[#D2D2D2]  placeholder:font-robotomono text-xs"
