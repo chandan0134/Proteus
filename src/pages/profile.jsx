@@ -6,7 +6,7 @@ const Profile = () => {
   return (
     <div className=" w-full h-screen bg-[#242038] ">
     <div class="flex h-screen bg-[514976]">
-      <div class="fixed flex flex-col top-0 left-0 h-full w-16 bg-gray-900  ">
+      <div class="fixed flex flex-col top-0 left-0 h-full w-[10vw] bg-gray-900  ">
         <div class="flex items-center justify-center mt-5">
           <a
             href="/signup"
@@ -23,13 +23,31 @@ const Profile = () => {
             <img className="w-full h-full object-contain" src={profile2} />
           </a>
         </div>
+      
       </div>   
       {/* <div class="flex-grow p-6">
         <h1 class="text-6xl font-semibold">HEllo priyankush</h1>
       </div> */}
-      <div class="w-full h-[92vh] grid grid-cols-1 sm:grid-cols-2">
+      {/* <div class="w-full h-[92vh] grid grid-cols-1 sm:grid-cols-2">
       <div className=" flex flex-col justify-center items-center "><h1>user data</h1></div>
       <div className=" flex flex-col justify-center items-center "><h1>transaction data</h1></div>
+      </div> */}
+      <div className="flex flex-col w-full h-screen text-white bg-[#242038]">
+       <div className="flex flex-col justify-around h-[30%] w-[90vw] items-center">
+        <p >Hello </p>
+       </div>
+
+       <div className="flex flex-col justify-around h-[70%] items-center">
+        <p>bcabvbvkbvvb</p>
+       <div class="flex flex-row justify-between">
+        
+        <div class="flexbox">schavc</div>
+        <div class="flexbox"></div>
+        </div>
+
+
+
+      </div>
       </div>
     </div>
     </div>
