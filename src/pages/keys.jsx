@@ -24,34 +24,56 @@ const Keys = () => {
         </div>
 
         <div className="flex flex-row justify-around w-full ">
-          <div className="py-2 bg-[#7189FF] rounded-xl px-12 text-center my-3 mx-auto">
+          <div className="py-2 bg-[#7189FF] rounded-xl px-12 text-center my-3 mx-auto w-50">
             <button>Profile Key</button>
-            {showKeys ? (
+            {/* {showKeys ? (
               <AiFillEyeInvisible onClick={() => setShowKeys(false)} />
             ) : (
               <AiFillEye onClick={() => setShowKeys(true)} />
-            )}
+            )} */}
           </div>
           <div className="py-2 bg-[#7189FF] rounded-xl px-12 text-center my-3 mx-auto">
             <button>Transaction Key</button>
-            {showKeys ? (
+            {/* {showKeys ? (
               <AiFillEyeInvisible onClick={() => setShowKeys(false)} />
             ) : (
               <AiFillEye onClick={() => setShowKeys(true)} />
-            )}
+            )} */}
           </div>
           <div className="rounded-xl py-2 bg-[#7189FF] px-12 text-center my-3 mx-auto">
             <button>Verification Key</button>
-            {showKeys ? (
+            {/* {showKeys ? (
               <AiFillEyeInvisible onClick={() => setShowKeys(false)} />
             ) : (
               <AiFillEye onClick={() => setShowKeys(true)} />
-            )}
+            )} */}
           </div>
         </div>
       </div>
-    </div>
+
+
+
+      <div className="flex flex-row justify-end w-full ">
+      <div className="py-2 bg-[#7189FF] rounded-xl px-12 text-center my-3 ml-auto">
+      <a href="/profile" target="_blank" rel="noopener noreferrer">
+      <button>Next</button>
+      </a>
+      </div>
+
+
+          
+          </div>
+        </div>
+      
+     
+
+
+
+
+    
   );
 };
 
 export default Keys;
+
+
