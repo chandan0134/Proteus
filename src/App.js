@@ -6,10 +6,12 @@ import Profile from "./pages/profile";
 import Transaction from "./pages/transaction";
 
 import { BrowserRouter, Route, Routes, Router } from "react-router-dom";
+import KeyState from "./context/keys/KeyState";
 
 function App() {
   return (
     <>
+    <KeyState>
       <BrowserRouter>
       <Routes>
       <Route exact path='/login' Component={Login}/>
@@ -21,7 +23,7 @@ function App() {
       </Routes>
     </BrowserRouter>
      
-  
+    </KeyState>
     </>
   );
 }

@@ -1,10 +1,16 @@
-import React, { useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import login from "../assets/signup-bg.jpg";
 import logo from "../assets/logo.png";
 import axios from "axios"
 import { AiFillEyeInvisible, AiFillEye } from "react-icons/ai";
+import KeyContext from "../context/keys/KeyContext";
+import { useNavigate } from "react-router-dom";
+  
 
 const Signup = () => {
+  const navigate = useNavigate();
+
+
   const [showPassword, setShowPassword] = useState(false);
   const [name, setName] = useState("");
   const [contactNo, setContactNo] = useState("");
@@ -13,6 +19,12 @@ const Signup = () => {
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
 
+  const KeycontextState = useContext(KeyContext)
+  console.log(KeycontextState)
+  KeycontextState.update('helloworld')
+  console.log("updated key",KeycontextState.state)
+
+
   const handleSubmit = async (e) => {
     e.preventDefault();
   
@@ -20,45 +32,78 @@ const Signup = () => {
       alert("Passwords do not match");
       return;
     }
+
+    axios.get("http://eb45-2402-3a80-1c73-aff6-8928-980f-2527-f3c7.ngrok.io/paillier/generatekeys", {}, {
+      headers: {
+          
+      }
+  }).then(
+      (response) => {
+          console.log(response)
+          KeycontextState.update(response)
+      },
+      (error) => {
+          if (error.response.status == 401) {
+          }
+      }
+  );
   
     // try {
-      axios.get("http://192.168.226.85:8000/paillier/generatekeys", {
-        'Access-Control-Allow-Headers':"*"
-      })
-      .then((res)=>{console.log(res)})
+      // axios.get("http://43c7-2402-3a80-1c73-aff6-8928-980f-2527-f3c7.ngrok.io/paillier/generatekeys", {
+      //   "Content-Type": "application/json"
+      // })
+      // .then((res)=>{
+      //   KeycontextState.update(res);
+      //   console.log(res);
+      // })
     // } catch (error) {
     //   console.error(error);
     //   alert("Error generating keys"); // updated alert message
     //   return; // added return statement to exit the function
     // }
   
-    // try {
-    //   const response= await fetch("http://192.168.226.85:8000/login", {
-    //     method: "POST",
-    //     headers: {
-    //       "Content-Type": "application/json",
-    //     },
-    //     body: JSON.stringify({
-    //       name,
-    //       contactNo,
-    //       gender,
-    //       age,
-    //       password,
-    //     }),
-    //   });
+    try {
+      const formdata = {
+          "name":`${name}`,
+          "contactNo":`${contactNo}`,
+          "gender":`${gender}`,
+          "age":`${age}`,
+          "password":`${password}`
+        }
+
+        axios.post("http://eb45-2402-3a80-1c73-aff6-8928-980f-2527-f3c7.ngrok.io/login", formdata, {
+          headers: {
+            "Content-Type": "application/json"
+          }
+      }).then(
+          (response) => {
+              console.log(response.data)
+              alert("Signup successful");
+              //console.log(response.data.user);
+              //localStorage.setItem("user", JSON.stringify(data.user));
+              //navigate("/keys");
+          },
+          (error) => {
+              if (error.response.status == 401) {
+                console.log(error);
+              }
+          }
+      );
+
+   
   
-    //   const data = await response.json();
-    //   if (data.success) {
-    //     alert("Signup successful");
-    //     localStorage.setItem("user", JSON.stringify(data.user));
-    //   } else {
-    //     alert(data.message);
-    //   }
-    // } catch (error) {
-    //   console.error(error);
-    //   alert("Error signing up");
-    // }
+      
+    } catch (error) {
+      console.error(error);
+      //alert("Error signing up");
+    }
   };
+
+//  useEffect(() => {
+//   a.state.update('helloworld')
+//  }, [])
+ 
+  
   
 
   return (

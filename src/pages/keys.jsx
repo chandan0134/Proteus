@@ -1,9 +1,14 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import logo from "../assets/animation_640_lfusqhls.gif";
 import { AiFillEyeInvisible, AiFillEye } from "react-icons/ai";
+import KeyContext from "../context/keys/KeyContext";
+
 
 const Keys = () => {
+
   const [showKeys, setShowKeys] = useState(false);
+  const KeycontextState = useContext(KeyContext)
+  console.log(KeycontextState)
 
   return (
     <div className="flex flex-col w-full h-screen text-white bg-[#242038]">
