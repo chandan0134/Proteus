@@ -39,11 +39,11 @@ const Keys = () => {
           </div>
           <div className="py-2 bg-[#7189FF] rounded-xl px-12 text-center my-3 mx-auto">
             <button>Transaction Key</button>
-            {/* {showKeys ? (
+            {showKeys ? (
               <AiFillEyeInvisible onClick={() => setShowKeys(false)} />
             ) : (
               <AiFillEye onClick={() => setShowKeys(true)} />
-            )} */}
+            )}
           </div>
           <div className="rounded-xl py-2 bg-[#7189FF] px-12 text-center my-3 mx-auto">
             <button>Verification Key</button>
