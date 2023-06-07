@@ -12,7 +12,7 @@ const profile = ()=>{
 
       <div className="w-15vh  bg-[#514976]">
          <div className=" my-10">
-            <img className=" w-[80%]   object-contain" src={Profile} alt=""/>
+            <img className=" w-[80%]   rounded-full color-white object-contain" src={Profile} alt=""/>
          </div>
          <div className=" my-10">
             <img className=" w-[80%]   object-contain" src={Profile2} alt=""/>
