@@ -36,7 +36,7 @@ const profile = ()=>{
 
  
           <div className="flex flex-row ">
-          <div className="w-[50%] mx-10 my-10 py-5 h-[100%] px-10 border-radius-10 border-red-700 bg-[#514976]">
+          <div className="w-[50%] mx-10 my-10 py-5 h-[100%] px-10 rounded-lg border-red-700 bg-[#514976]">
             <div className="flex flex-row">
             <div className="w-[50%] text-white font-Gilroy"> 
                  <h1>Transaction Key</h1>
@@ -85,7 +85,7 @@ const profile = ()=>{
             
             
           </div>
-          <div className="w-[50%] mx-10 my-10 py-5 h-[100%] px-10 border-radius-10  border-red-700 bg-[#514976]">
+          <div className="w-[50%] mx-10 my-10 py-5 h-[100%] px-10 rounded-lg  border-red-700 bg-[#514976]">
           <div className="flex flex-row">
           <div className="w-[50%] text-white font-Gilroy"> 
                  <h1>Transaction ID</h1>
@@ -96,39 +96,39 @@ const profile = ()=>{
             
             </div>
             <div className="flex flex-row">
-            <div className="w-[50%] my-2 text-white font-Gilroy"> 
+            <div className="w-[50%] my-3 text-white font-Gilroy"> 
                  <h1>Time</h1>
             </div>
-            <div className="w-[50%] my-2 text-white font-Gilroy"> 
+            <div className="w-[50%] my-3 text-white font-Gilroy"> 
                  <h1>23:11</h1>
             </div>
 
             </div>
             <div className="flex flex-row">
-            <div className="w-[50%] my-2 text-white font-Gilroy"> 
+            <div className="w-[50%] my-3 text-white font-Gilroy"> 
                  <h1>Balance</h1>
             </div>
-            <div className="w-[50%] my-2 text-white font-Gilroy"> 
+            <div className="w-[50%] my-3 text-white font-Gilroy"> 
                  <h1>500</h1>
             </div>
 
             </div>
             <div className="  flex border-b-2 border-white"></div>
             <div className="flex flex-row">
-            <div className="w-[50%]  my-2 text-white font-Gilroy"> 
+            <div className="w-[50%]  my-3 text-white font-Gilroy"> 
                  <h1>Transaction ID</h1>
 
             </div>
-            <div className="w-[50%]  my-2 text-white font-Gilroy"> 
+            <div className="w-[50%]  my-3 text-white font-Gilroy"> 
                  <h1>35373827</h1>
                  
             </div>
             </div>
             <div className="flex flex-row">
-            <div className="w-[50%] my-2 text-white font-Gilroy"> 
+            <div className="w-[50%] my-3 text-white font-Gilroy"> 
                  <h1>Time</h1>
             </div>
-            <div className="w-[50%] my-2 text-white font-Gilroy"> 
+            <div className="w-[50%] my-3 text-white font-Gilroy"> 
                  <h1>13:45</h1>
             </div>
           
@@ -142,7 +142,7 @@ const profile = ()=>{
             </div>
 
             </div>
-            <div className=" my-3 flex border-b-2 border-white"></div>
+            <div className=" my-4 flex border-b-2 border-white"></div>
 
         
 
