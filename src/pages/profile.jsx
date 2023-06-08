@@ -1,7 +1,8 @@
 import React, {useState} from "react";
 import Profile from "../assets/home icon.png";
 import Profile2 from "../assets/user icon.png";
-import Profile3 from "../assets/Group 27.png"
+import Profile3 from "../assets/Group 27.png";
+import logo from "../assets/logo.png";
 
 
 const profile = ()=>{
@@ -23,7 +24,11 @@ const profile = ()=>{
       </div>
 
       <div className="flex-1 bg-[#242038]">
-        <div className=" py-5 px-8 flex text-white font-Aquire text-3xl"><h1>PROTEUS</h1></div>
+        <div className=" py-5 px-8 flex">
+       
+        <img className=" w-[10%]   object-contain" src={logo} alt=""/>
+        
+        </div>
         
         <div className=" py-5 px-8 flex  text-white font-Gilroy text-6xl"><h1>Hello Priyankush</h1></div>
 
