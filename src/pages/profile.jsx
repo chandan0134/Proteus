@@ -148,6 +148,17 @@ const profile = ()=>{
 
             </div>
             <div className=" my-4 flex border-b-2 border-white"></div>
+            <div className="flex justify-center items-center">
+          <input
+            className=" px-4 py-2 w-[50%] rounded-lg bg-[#D2D2D2] text-black"
+            placeholder="$700"
+           />
+          </div>
+          <div className="flex justify-center items-center mx-12 py-4">
+                  <button className="bg-[#6C63FF] w-[30%] text-white  rounded-[12px] px-5 py-4 text-xs font-bold">
+                  Send
+               </button>
+               </div>
 
         
 
@@ -155,6 +166,8 @@ const profile = ()=>{
 
 
           </div>
+
+
 
         
 

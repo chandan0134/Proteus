@@ -29,9 +29,9 @@ const Keys = () => {
         </center>
         </div>
 
-        <div className="items-center text-1xl ">
+        <div className="items-center text-1xl  my-3">
           <center>
-           <h1>ifhoeijeqofjepofkq</h1>
+           <h1>Here are your generated public and private keys. Keep track of the keys as these are sensitive data</h1>
           </center>
         </div>
       
@@ -39,8 +39,8 @@ const Keys = () => {
         
 
 
-        <div className="flex flex-row justify-around w-full ">
-          <div className="py-2 bg-[#7189FF] flex flex-col items-center rounded-xl px-8 text-center my-3 mx-auto w-50">
+        <div className=" grid grid-cols-3 gap-20 px-20 w-full my-8">
+          <div className="py-2 bg-[#7189FF] flex flex-col items-center rounded-xl px-8 text-center w-full">
             <div className="flex flex-row justify-between items-center">
             <div  className=" px-2"><button>Profile Key</button></div>
             {showKeys ? (
@@ -49,24 +49,50 @@ const Keys = () => {
               <div className=" px-2 "><AiFillEye onClick={() => setShowKeys(true)} /></div>
             )}
             </div>
-            <div className={showKeys?"hidden":""}>abc</div>
+            <div className="text-black items-center py-2 font-Roboto Mono">
+            <div className={showKeys ? "Mono hidden" : ""}>hy4eyghijfws2fi3</div>
+            </div>
+            <div className="items-center py-2 ">
+              <h1>used to identify user</h1>
+            </div>
           </div>
-          <div className="py-2 bg-[#7189FF] rounded-xl px-12 text-center my-3 mx-auto">
-            <button>Transaction Key</button>
+
+          <div className="py-2 bg-[#7189FF] flex flex-col items-center rounded-xl px-8 text-center w-full">
+            <div className="flex flex-row justify-between items-center">
+            <div  className=" px-2"><button>Private Key</button></div>
             {showKeys ? (
-              <AiFillEyeInvisible onClick={() => setShowKeys(false)} />
+              <div className=" px-2 text-black"><AiFillEyeInvisible onClick={() => setShowKeys(false)} /></div>
             ) : (
-              <AiFillEye onClick={() => setShowKeys(true)} />
+              <div className=" px-2 "><AiFillEye onClick={() => setShowKeys(true)} /></div>
             )}
+            </div>
+            <div className="text-black items-center py-2 font-Roboto Mono">
+            <div className={showKeys ? "Mono hidden" : ""}>hy4eyghijfws2fi3</div>
+            </div>
+            <div className="items-center py-2 ">
+              <h1>Used to decrypt personal data</h1>
+            </div>
           </div>
-          <div className="rounded-xl py-2 bg-[#7189FF] px-12 text-center my-3 mx-auto">
-            <button>Verification Key</button>
+
+          <div className="py-2 bg-[#7189FF] flex flex-col items-center rounded-xl px-8 text-center w-full">
+            <div className="flex flex-row justify-between items-center">
+            <div  className=" px-2"><button>Transaction Key Key</button></div>
             {showKeys ? (
-              <AiFillEyeInvisible onClick={() => setShowKeys(false)} />
+              <div className=" px-2 text-black"><AiFillEyeInvisible onClick={() => setShowKeys(false)} /></div>
             ) : (
-              <AiFillEye onClick={() => setShowKeys(true)} />
+              <div className=" px-2 "><AiFillEye onClick={() => setShowKeys(true)} /></div>
             )}
+            </div>
+            <div className="text-black items-center py-2 font-Roboto Mono">
+            <div className={showKeys ? "Mono hidden" : ""}>hy4eyghijfws2fi3</div>
+            </div>
+            <div className="items-center py-2 ">
+              <h1>Used as password during transaction</h1>
+            </div>
           </div>
+
+        
+       
         </div>
 
 
@@ -74,9 +100,9 @@ const Keys = () => {
 
 
         <div class="flex flex-col h-screen justify-end">
-          <div class="flex flex-row justify-between absolute bottom-0 left-0 right-0 p-4">
-          <button class="bg-blue-500 text-white py-2 px-4 rounded-md">Button 1</button>
-          <button class="bg-red-500 text-white py-2 px-4 rounded-md">Button 2</button>
+          <div class="flex flex-row justify-between absolute bottom-0 left-0 right-0 p-8">
+          <button class="bg-[#433C62] text-white py-4 px-12 rounded-md">BACK</button>
+          <button class="bg-[#433C62] text-white py-4 px-12 rounded-md">NEXT</button>
         </div>
 
 

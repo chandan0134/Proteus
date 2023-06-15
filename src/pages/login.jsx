@@ -1,10 +1,14 @@
 import React, { useState } from "react";
 import login from "../assets/signup-bg.jpg";
 import logo from "../assets/logo.png";
+import { useHistory } from "react-router-dom";
 import { AiFillEyeInvisible, AiFillEye } from "react-icons/ai";
 
 const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
+
+
+ 
 
   return (
     <div className=" w-full h-screen bg-[#242038] ">
@@ -73,7 +77,7 @@ const Login = () => {
               </p>
             </div>
             <div className="flex justify-center items-center ">
-              <button class="  w-[50%] bg-[#7189FF] rounded-[35px] my-5 py-2 font-bold text-xl text-white ">
+              <button className="  w-[50%] bg-[#7189FF] rounded-[35px] my-5 py-2 font-bold text-xl text-white ">
                 Sign in
               </button>
             </div>
