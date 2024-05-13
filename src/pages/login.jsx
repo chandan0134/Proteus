@@ -6,10 +6,6 @@ import { AiFillEyeInvisible, AiFillEye } from "react-icons/ai";
 
 const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
-
-
- 
-
   return (
     <div className=" w-full h-screen bg-[#242038] ">
       <div className=" px-5 py-3">

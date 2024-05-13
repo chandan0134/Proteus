@@ -9,8 +9,6 @@ import { useNavigate } from "react-router-dom";
 
 const Signup = () => {
   const navigate = useNavigate();
-
-
   const [showPassword, setShowPassword] = useState(false);
   const [name, setName] = useState("");
   const [contactNo, setContactNo] = useState("");
@@ -24,7 +22,6 @@ const Signup = () => {
   KeycontextState.update('helloworld')
   console.log("updated key",KeycontextState.state)
 
-
   const handleSubmit = async (e) => {
     e.preventDefault();
   
@@ -33,13 +30,13 @@ const Signup = () => {
       return;
     }
 
-    axios.get("http://eb45-2402-3a80-1c73-aff6-8928-980f-2527-f3c7.ngrok.io/paillier/generatekeys", {}, {
+    axios.get("https://barclays-hack-backend.onrender.com/paillier/generatekeys", {}, {
       headers: {
           
       }
   }).then(
       (response) => {
-          console.log(response)
+          console.log("/paillier/generatekeys",response)
           KeycontextState.update(response)
       },
       (error) => {
@@ -47,7 +44,6 @@ const Signup = () => {
           }
       }
   );
-  
     // try {
       // axios.get("http://43c7-2402-3a80-1c73-aff6-8928-980f-2527-f3c7.ngrok.io/paillier/generatekeys", {
       //   "Content-Type": "application/json"
@@ -68,10 +64,12 @@ const Signup = () => {
           "contactNo":`${contactNo}`,
           "gender":`${gender}`,
           "age":`${age}`,
+          "transactionKey":"1234",
+          "keyHash": "1234",
           "password":`${password}`
         }
 
-        axios.post("http://eb45-2402-3a80-1c73-aff6-8928-980f-2527-f3c7.ngrok.io/login", formdata, {
+        axios.post("https://barclays-hack-backend.onrender.com/signUp", formdata, {
           headers: {
             "Content-Type": "application/json"
           }
@@ -84,9 +82,9 @@ const Signup = () => {
               //navigate("/keys");
           },
           (error) => {
-              if (error.response.status == 401) {
+              // if (error.response.status == 401) {
                 console.log(error);
-              }
+              // }
           }
       );
 

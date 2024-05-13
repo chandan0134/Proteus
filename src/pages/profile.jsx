@@ -30,7 +30,7 @@ const profile = ()=>{
         
         </div>
         
-        <div className=" py-5 px-8 flex  text-white font-Gilroy text-6xl"><h1>Hello Priyankush</h1></div>
+        <div className=" py-5 px-8 flex  text-white font-Gilroy text-6xl"><h1>Hello Sanjeeban</h1></div>
 
         <div className="flex flex-row ">
           <div className="w-[50%] px-10 text-white font-Gilroy text-1.5xl"><h1>User Details </h1></div>
