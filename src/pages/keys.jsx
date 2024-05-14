@@ -66,7 +66,9 @@ const Keys = () => {
             )}
             </div>
             <div className="text-black items-center py-2 font-Roboto Mono">
-            <div className={showKeys ? "Mono hidden" : ""}>{encAesU}</div>
+            <div className={showKeys ? "Mono hidden" : ""}>
+              {encAesU.substring(0,30)+"..."}
+              </div>
             </div>
             <div className="items-center py-2 ">
               <h1>used to identify user</h1>
@@ -84,7 +86,7 @@ const Keys = () => {
             </div>
             <div className="text-black items-center py-2 font-Roboto Mono">
             <div className={showKeys ? "Mono hidden" : ""}>
-              {pvtKey}
+              {pvtKey.substring(0,30)+"..."}
 
             </div>
             </div>
@@ -104,7 +106,7 @@ const Keys = () => {
             </div>
             <div className="text-black items-center py-2 font-Roboto Mono">
             <div className={showKeys ? "Mono hidden" : ""}>
-              {userPvtKey}
+              {userPvtKey.substring(0,30)+"..."}
             </div>
             </div>
             <div className="items-center py-2 ">
