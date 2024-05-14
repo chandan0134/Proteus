@@ -1,11 +1,20 @@
 import React, {useState} from "react";
-import Profile from "../assets/home icon.png";
+// import Profile from "../assets/home icon.png";
 import Profile2 from "../assets/user icon.png";
 import Profile3 from "../assets/Group 27.png";
 import logo from "../assets/logo.png";
+import { useLocation } from 'react-router-dom';
+import { useNavigate } from "react-router-dom";
 
+function Profile() {
+     const location = useLocation();
+     const navigate = useNavigate();
 
-const profile = ()=>{
+     const userData = location.state.userdata;
+   console.log("user", userData)
+   const trans = location.state.formdata
+   console.log("trans", location.state.formdata)
+
   return (
 
     <div className="flex h-screen ">
@@ -30,7 +39,7 @@ const profile = ()=>{
         
         </div>
         
-        <div className=" py-5 px-8 flex  text-white font-Gilroy text-6xl"><h1>Hello Sanjeeban</h1></div>
+        <div className=" py-5 px-8 flex  text-white font-Gilroy text-6xl"><h1>Hello {userData.Username}</h1></div>
 
         <div className="flex flex-row ">
           <div className="w-[50%] px-10 text-white font-Gilroy text-1.5xl"><h1>User Details </h1></div>
@@ -47,7 +56,7 @@ const profile = ()=>{
                  <h1>Transaction Key</h1>
             </div>
             <div className="w-[50%] px-10 text-white font-Gilroy"> 
-                 <h1>123456</h1>
+                 <h1>{userData.transaction_key.substring(0,20)}...</h1>
             </div>
 
             </div>
@@ -56,7 +65,7 @@ const profile = ()=>{
                  <h1>Name</h1>
             </div>
             <div className="w-[50%] px-10 py-10 text-white font-Gilroy"> 
-                 <h1>123456</h1>
+                 <h1>{userData.Username}</h1>
             </div>
             </div>
             <div className="flex flex-row">
@@ -64,7 +73,7 @@ const profile = ()=>{
                  <h1>Contact</h1>
             </div>
             <div className="w-[50%] px-10  text-white font-Gilroy"> 
-                 <h1>9957680702</h1>
+                 <h1>{userData.Phone_No}</h1>
 
             </div>
             </div>
@@ -73,7 +82,7 @@ const profile = ()=>{
                  <h1>Gender</h1>
             </div>
             <div className="w-[50%] px-10 py-10 text-white font-Gilroy"> 
-                 <h1>Male</h1>
+                 <h1>{userData.Gender}</h1>
 
             </div>
             </div>
@@ -83,7 +92,7 @@ const profile = ()=>{
                  <h1>Age</h1>
             </div>
             <div className="w-[50%] px-10  text-white font-Gilroy"> 
-                 <h1>23</h1>
+                 <h1>{userData.Age}</h1>
 
             </div>
             </div>
@@ -96,66 +105,40 @@ const profile = ()=>{
                  <h1>Transaction ID</h1>
             </div>
             <div className="w-[50%] text-white font-Gilroy"> 
-                 <h1>123456</h1>
+                 <h1>{trans.hashKey?trans.hashKey.substring(15,8):"----"}</h1>
             </div>
             
             </div>
             <div className="flex flex-row">
             <div className="w-[50%] my-3 text-white font-Gilroy"> 
-                 <h1>Time</h1>
+                 <h1>Reciever</h1>
             </div>
             <div className="w-[50%] my-3 text-white font-Gilroy"> 
-                 <h1>23:11</h1>
+                 <h1>{trans.transactionKey?trans.transactionKey.substring(0,20)+"...":"----"}</h1>
             </div>
 
             </div>
             <div className="flex flex-row">
             <div className="w-[50%] my-3 text-white font-Gilroy"> 
-                 <h1>Balance</h1>
+                 <h1>Amount</h1>
             </div>
             <div className="w-[50%] my-3 text-white font-Gilroy"> 
-                 <h1>500</h1>
+                 <h1>{trans.value?trans.value:"00"}</h1>
             </div>
 
-            </div>
-            <div className="  flex border-b-2 border-white"></div>
-            <div className="flex flex-row">
-            <div className="w-[50%]  my-3 text-white font-Gilroy"> 
-                 <h1>Transaction ID</h1>
-
-            </div>
-            <div className="w-[50%]  my-3 text-white font-Gilroy"> 
-                 <h1>35373827</h1>
-                 
-            </div>
-            </div>
-            <div className="flex flex-row">
-            <div className="w-[50%] my-3 text-white font-Gilroy"> 
-                 <h1>Time</h1>
-            </div>
-            <div className="w-[50%] my-3 text-white font-Gilroy"> 
-                 <h1>13:45</h1>
-            </div>
-          
-            </div>
-            <div className="flex flex-row">
-            <div className="w-[50%]  text-white font-Gilroy"> 
-                 <h1>Balance</h1>
-            </div>
-            <div className="w-[50%]  text-white font-Gilroy"> 
-                 <h1>300</h1>
-            </div>
+            
 
             </div>
             <div className=" my-4 flex border-b-2 border-white"></div>
-            <div className="flex justify-center items-center">
+            {/* <div className="flex justify-center items-center">
           <input
             className=" px-4 py-2 w-[50%] rounded-lg bg-[#D2D2D2] text-black"
             placeholder="$700"
            />
-          </div>
+          </div> */}
           <div className="flex justify-center items-center mx-12 py-4">
-                  <button className="bg-[#6C63FF] w-[30%] text-white  rounded-[12px] px-5 py-4 text-xs font-bold">
+                  <button className="bg-[#6C63FF] w-[30%] text-white  rounded-[12px] px-5 py-4 text-xs font-bold"
+                  onClick={(e)=>{navigate('/transaction', {state:userData})}}>
                   Send
                </button>
                </div>
@@ -179,4 +162,4 @@ const profile = ()=>{
   );
 };
 
-export default profile;
+export default Profile;

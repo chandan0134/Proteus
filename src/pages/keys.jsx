@@ -3,14 +3,30 @@ import logo from "../assets/animation_640_lfusqhls.gif";
 import { AiFillEyeInvisible, AiFillEye } from "react-icons/ai";
 import KeyContext from "../context/keys/KeyContext";
 import logo1 from "../assets/logo.png";
+import {useEffect } from "react";
+import { Navigate, useLocation, useNavigate } from "react-router-dom";
 
 
 const Keys = () => {
-  
+  const location = useLocation();
+  const navigate = useNavigate();
+  const [encAesU, setEncAesU] = useState("");
+  const [userPvtKey, setUserPvtKey] = useState("");
+  const [pvtKey, setPvtKey] = useState("");
   const [showKeys, setShowKeys] = useState(false);
-  const KeycontextState = useContext(KeyContext)
-  console.log(KeycontextState)
 
+  useEffect(() => {
+    if (location.state) {
+      const { enc_aes_u, userPvtKey, pvt_key } = location.state;
+      setEncAesU(enc_aes_u);
+      setUserPvtKey(userPvtKey);
+      setPvtKey(pvt_key);
+    }
+  }, [location.state]);
+
+  const handleNext = () => {
+    navigate("/login");
+  }
   return (
 
     <div className="flex flex-col w-full h-screen text-white bg-[#242038]">
@@ -50,7 +66,7 @@ const Keys = () => {
             )}
             </div>
             <div className="text-black items-center py-2 font-Roboto Mono">
-            <div className={showKeys ? "Mono hidden" : ""}>hy4eyghijfws2fi3</div>
+            <div className={showKeys ? "Mono hidden" : ""}>{encAesU}</div>
             </div>
             <div className="items-center py-2 ">
               <h1>used to identify user</h1>
@@ -67,7 +83,10 @@ const Keys = () => {
             )}
             </div>
             <div className="text-black items-center py-2 font-Roboto Mono">
-            <div className={showKeys ? "Mono hidden" : ""}>hy4eyghijfws2fi3</div>
+            <div className={showKeys ? "Mono hidden" : ""}>
+              {pvtKey}
+
+            </div>
             </div>
             <div className="items-center py-2 ">
               <h1>Used to decrypt personal data</h1>
@@ -76,7 +95,7 @@ const Keys = () => {
 
           <div className="py-2 bg-[#7189FF] flex flex-col items-center rounded-xl px-8 text-center w-full">
             <div className="flex flex-row justify-between items-center">
-            <div  className=" px-2"><button>Transaction Key Key</button></div>
+            <div  className=" px-2"><button>Transaction Key </button></div>
             {showKeys ? (
               <div className=" px-2 text-black"><AiFillEyeInvisible onClick={() => setShowKeys(false)} /></div>
             ) : (
@@ -84,7 +103,9 @@ const Keys = () => {
             )}
             </div>
             <div className="text-black items-center py-2 font-Roboto Mono">
-            <div className={showKeys ? "Mono hidden" : ""}>hy4eyghijfws2fi3</div>
+            <div className={showKeys ? "Mono hidden" : ""}>
+              {userPvtKey}
+            </div>
             </div>
             <div className="items-center py-2 ">
               <h1>Used as password during transaction</h1>
@@ -102,7 +123,7 @@ const Keys = () => {
         <div class="flex flex-col h-screen justify-end">
           <div class="flex flex-row justify-between absolute bottom-0 left-0 right-0 p-8">
           <button class="bg-[#433C62] text-white py-4 px-12 rounded-md">BACK</button>
-          <button class="bg-[#433C62] text-white py-4 px-12 rounded-md">NEXT</button>
+          <button class="bg-[#433C62] text-white py-4 px-12 rounded-md" onClick={handleNext}>NEXT</button>
         </div>
 
 
